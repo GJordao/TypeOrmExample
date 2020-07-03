@@ -1,0 +1,27 @@
+{
+   "name": "typescript-starter",
+   "version": "0.0.1",
+   "description": "Awesome project developed with TypeORM.",
+   "main": "dist/index.js",
+   "devDependencies": {
+      "@types/express": "^4.17.6",
+      "@types/node": "^8.0.29",
+      "nodemon": "^2.0.4",
+      "ts-node": "^8.10.2",
+      "tslint": "^6.1.2",
+      "typescript": "^3.9.5"
+   },
+   "dependencies": {
+      "body-parser": "^1.18.1",
+      "express": "^4.17.1",
+      "mysql": "^2.18.1",
+      "reflect-metadata": "^0.1.13",
+      "typeorm": "0.2.25"
+   },
+   "scripts": {
+      "createMigration": "./node_modules/.bin/ts-node ./node_modules/.bin/typeorm -c localhost migration:generate",
+      "migrationsLocal": "./node_modules/.bin/ts-node ./node_modules/.bin/typeorm -c localhost migration:run",
+      "migrations": "./node_modules/.bin/ts-node ./node_modules/.bin/typeorm migration:run",
+      "start": "npm run migrations && nodemon"
+   }
+}
